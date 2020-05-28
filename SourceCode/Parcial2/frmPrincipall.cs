@@ -58,8 +58,132 @@ namespace Parcial2
                     "Hugo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }        
         }
-        
 
-        
+
+        private void tabPage2_Click(object sender, EventArgs e)
+       
+      { 
+                 button2.Enabled = false;
+                 
+            try
+            {
+                var dt = ConnectionDB.ExecuteQuery("SELECT * FROM BUSINESS");
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox4.Clear();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR");
+            }
+      }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox5.Text.Equals("") ||
+                textBox6.Text.Equals(""))
+            {
+                MessageBox.Show("No se pueden dejar campos vacios ");
+            }
+            else
+            {
+                try
+                {
+                    ConnectionDB.ExecuteNonQuery($"INSERT INTO BUSINESS( name, description) VALUES (" +
+                                               $"'{textBox5.Text}'," +
+                                               $"'{textBox6.Text}')");
+
+                    MessageBox.Show("Se ha registrado la empresa");
+                    
+                    var dt = ConnectionDB.ExecuteQuery("SELECT * FROM PRODUCT");
+                    
+                    textBox5.Clear();
+                    textBox6.Clear();
+                   
+                   
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR");
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult deleteconfirm;
+            
+            if (comboBox2.Text == "")
+            {
+                MessageBox.Show("No se pueden dejar el campo vacio ");
+            }
+            else
+            {
+                button2.Enabled = true;
+                
+                deleteconfirm = MessageBox.Show("Se borrara la empresa","Confirmar",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                
+                if (deleteconfirm == DialogResult.OK)
+                {
+                    try
+                    {
+                        ConnectionDB.ExecuteNonQuery("DELETE FROM public.BUSINESS WHERE name ="+
+                                                   $"'{comboBox2.Text}'");
+                        textBox4.Clear();
+                        textBox1.Clear();
+                        textBox2.Clear();
+                        textBox3.Clear();
+                       
+                        
+                        MessageBox.Show("Empresa eliminada","Eliminar empresa", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                        throw;
+                    }
+                }
+                else
+                {
+                   comboBox2.Text = "";
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox7.Text.Equals(""))
+            {
+                MessageBox.Show("No se pueden dejar campos vacios ");
+            }
+            else
+            {
+                try
+                {
+                    var num = $"SELECT idBusiness FROM BUSINESS WHERE" +
+                              $" name ='{comboBox3.SelectedItem.ToString()}'";
+                
+                    var dt = ConnectionDB.ExecuteQuery(num);
+                    var dr = dt.Rows[0];
+                    var myNum = int.Parse(dt.Rows[0][0].ToString());
+
+                    ConnectionDB.ExecuteNonQuery($"INSERT INTO PRODUCT(idBusiness, name) VALUES (" +
+                                               $"{myNum}, " + 
+                                               $"'{textBox7.Text}')");
+
+                    MessageBox.Show("Se ha registrado el producto");
+                  
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR");
+                }
+            }
+        }
     }
 }

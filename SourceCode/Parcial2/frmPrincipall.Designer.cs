@@ -50,6 +50,13 @@ namespace Parcial2
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -245,6 +252,13 @@ namespace Parcial2
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
@@ -259,6 +273,73 @@ namespace Parcial2
             this.tabPage2.Size = new System.Drawing.Size(792, 333);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empresas";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(504, 245);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(125, 49);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Agregar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(322, 274);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(149, 20);
+            this.textBox7.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(236, 274);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Nombre:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(322, 226);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(149, 21);
+            this.comboBox3.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(331, 150);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 56);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Agregar producto";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(617, 92);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(125, 49);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Eliminar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(60, 157);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 49);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Agregar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox2
             // 
@@ -411,14 +492,20 @@ namespace Parcial2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox cmbPermisos;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBoxPermisos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -439,6 +526,7 @@ namespace Parcial2
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
 
         #endregion
     }
