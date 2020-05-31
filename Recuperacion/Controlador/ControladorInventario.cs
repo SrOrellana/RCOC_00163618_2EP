@@ -65,7 +65,7 @@ namespace Preparcial.Controlador
         {
             try
             {
-                //Cambiar nombreArticulo a nombreArt
+                //Correcion: Cambiar nombreArticulo a nombreArt
                 ConexionBD.EjecutarComando("INSERT INTO INVENTARIO(nombreArt, descripcion, precio, stock)" +
                     $" VALUES('{nombre}', '{descripcion}', {precio}, {stock})");
 

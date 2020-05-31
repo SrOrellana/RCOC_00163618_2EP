@@ -72,7 +72,7 @@ namespace Preparcial.Controlador
         {
             try
             {
-                //Cambiar nombreUsuario por nombre nada mas 
+                //Correcion: Cambiar nombreUsuario por nombre nada mas 
                 ConexionBD.EjecutarComando("INSERT INTO USUARIO(nombre, contrasenia, tipo)" +
                     $" VALUES('{usuario}', '{usuario}', false)");
 

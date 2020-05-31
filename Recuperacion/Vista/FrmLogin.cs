@@ -28,7 +28,7 @@ namespace Preparcial
         // primero se asigna el ValueMember, luego DisplayMember, y por ultimo el DataSource, sino tira excepcion
         private void PoblarControlers()
         {
-            //Cambiar nombre de el ValueMember//
+            //Correcion: Cambiar nombre de el ValueMember
             cmbUser.DataSource = null;
             cmbUser.ValueMember = "Contrasena";
             cmbUser.DisplayMember = "NombreUsuario";

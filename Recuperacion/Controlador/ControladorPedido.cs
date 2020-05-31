@@ -12,6 +12,7 @@ namespace Preparcial.Controlador
 
             try
             {
+                //Correcion:En lugar de nombre articulo es nombreArt
                 pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio" +
                                             " FROM PEDIDO p, INVENTARIO i, USUARIO u" +
                                             " WHERE p.idArticulo = i.idArticulo" +
@@ -32,6 +33,8 @@ namespace Preparcial.Controlador
 
             try
             {
+                //Correccion: En lugar de nombre articulo es nombreArt
+
                 pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio" +
                                             " FROM PEDIDO p, INVENTARIO i, USUARIO u" +
                                             " WHERE p.idArticulo = i.idArticulo" +
@@ -45,7 +48,7 @@ namespace Preparcial.Controlador
             return pedidos;
         }
 
-        //Cambiar el string de las variables a int//
+        
         public static void HacerPedido(string idUsuario, string idArticulo, string cantidad)
         {
             try
